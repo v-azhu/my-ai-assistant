@@ -149,7 +149,6 @@ Responsible for:
 
 # Project Structure
 my-ai-assistant/
-
 ├── README.md
 ├── requirements.txt
 ├── .env.example
