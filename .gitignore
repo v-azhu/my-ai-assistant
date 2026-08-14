@@ -25,3 +25,5 @@ htmlcov/
 
 # Logs
 *.log
+
+mem0_data/
