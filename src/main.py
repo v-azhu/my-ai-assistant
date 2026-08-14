@@ -40,6 +40,11 @@ def main():
         try:
             response = chat_manager.send_message(user_input)
             print(f"\nAssistant: {response}")
+        except KeyboardInterrupt:
+            # Local models can take a while (especially a CPU-bound
+            # chat model plus Mem0's own extraction call on top).
+            # Ctrl+C here should cancel this turn, not crash the app.
+            print("\n[Cancelled — that response was taking a while. Try again.]")
         except LLMError as e:
             print(f"\n[Assistant unavailable] {e}")
         except Exception as e:

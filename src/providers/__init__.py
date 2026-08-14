@@ -38,7 +38,11 @@ def _create_provider() -> LLMProvider:
         from providers.ollama_provider import OllamaProvider
         return OllamaProvider()
 
+    if name == "groq":
+        from providers.groq_provider import GroqProvider
+        return GroqProvider()
+
     raise ValueError(
         f"Unknown LLM_PROVIDER '{config.LLM_PROVIDER}'. "
-        f"Supported values: 'openai', 'anthropic', 'ollama'."
+        f"Supported values: 'openai', 'anthropic', 'ollama', 'groq'."
     )

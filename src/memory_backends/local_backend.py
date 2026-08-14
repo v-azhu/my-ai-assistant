@@ -32,7 +32,7 @@ class LocalMemoryBackend(MemoryBackend):
             "llm": {
                 "provider": "ollama",
                 "config": {
-                    "model": config.OLLAMA_MODEL,
+                    "model": config.OLLAMA_MEMORY_MODEL,
                     "temperature": 0,
                     "max_tokens": 2000,
                     "ollama_base_url": config.OLLAMA_BASE_URL,
@@ -53,7 +53,7 @@ class LocalMemoryBackend(MemoryBackend):
             raise MemoryBackendError(
                 "Failed to initialize local Mem0 memory store. "
                 "Make sure Ollama is running and both "
-                f"'{config.OLLAMA_MODEL}' and '{config.OLLAMA_EMBED_MODEL}' "
+                f"'{config.OLLAMA_MEMORY_MODEL}' and '{config.OLLAMA_EMBED_MODEL}' "
                 f"have been pulled (ollama pull {config.OLLAMA_EMBED_MODEL}). "
                 f"Original error: {e}"
             ) from e
